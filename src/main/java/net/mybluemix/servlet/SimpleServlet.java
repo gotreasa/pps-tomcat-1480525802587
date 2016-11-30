@@ -21,7 +21,16 @@ public class SimpleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.getWriter().print("Hello World!");
+        String fullMessage = "Hello World from Gearoid!\n";
+        System.out.println(fullMessage);
+        Enumeration headerNames = request.getHeaderNames();
+		while (headerNames.hasMoreElements()) {
+			String key = (String) headerNames.nextElement();
+			String value = request.getHeader(key);
+			fullMessage += "Header Key: " + key + ", Header Value: " + value;
+			System.out.println("Header Key: " + key + ", Header Value: " + value);
+		}
+		response.getWriter().print(fullMessage);
     }
 
 }
