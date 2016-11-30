@@ -34,5 +34,19 @@ public class SimpleServlet extends HttpServlet {
 		}
 		response.getWriter().print(fullMessage);
     }
+	
+	/**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        Enumeration headerNames = request.getHeaderNames();
+		while (headerNames.hasMoreElements()) {
+			String key = (String) headerNames.nextElement();
+			String value = request.getHeader(key);
+			System.out.println("Header Key: " + key + ", Header Value: " + value);
+		}
+    }
 
 }
