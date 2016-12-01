@@ -31,7 +31,7 @@ public class SimpleServlet extends HttpServlet {
 			String key = (String) headerNames.nextElement();
 			String value = request.getHeader(key);
 			fullMessage += "Header Key: " + key + ", Header Value: " + value;
-			System.out.println("Header Key: " + key + ", Header Value: " + value);
+			System.out.println("Header Key: '" + key + ", Header Value: " + value + "'");
 		}
 		response.getWriter().print(fullMessage);
     }
