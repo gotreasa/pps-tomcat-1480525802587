@@ -1,6 +1,7 @@
 package net.mybluemix.servlet;
 
 import java.io.IOException;
+import java.io.BufferedReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
