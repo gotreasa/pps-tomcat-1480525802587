@@ -46,7 +46,7 @@ public class SimpleServlet extends HttpServlet {
         while (headerNames.hasMoreElements()) {
 	        String key = (String) headerNames.nextElement();
 	        String value = request.getHeader(key);
-	        System.out.println("Header Key: " + key + ", Header Value: " + value);
+	        System.out.println("-H " + key + ": " + value);
     	}
         StringBuffer jb = new StringBuffer();
         String line = null;
